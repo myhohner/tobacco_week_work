@@ -1,0 +1,191 @@
+﻿        body
+        {
+            font-size: 12px;
+            color: #000;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+            font-family: arial,tahoma, 'Microsoft Yahei' ,sans-serif;
+            overflow-x: hidden;
+        
+
+        }
+
+        em
+        {
+             font-style:normal;
+               
+            
+            }
+        #page
+        {
+                      width: 600px;
+            margin-left: 100px;
+             table-layout:fixed;
+            }
+        ul, li
+        {
+            list-style-type: none;
+        }
+        h1, h2, h3, h4, h5, h6, hr, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, select, div
+        {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+        }
+       .newList *
+        {
+               overflow: hidden;
+            }
+        img
+        {
+            border-width: 0;
+        }
+        h3 a
+        {
+            color: rgb(0, 102, 204);
+            font-size: 15px;
+            line-height: 1.54;
+        }
+        .title
+        {
+             margin-bottom:8px;
+            }
+        h3 a:visited
+        {
+            color: #810081;
+        }
+        h3 a:link
+        {
+            color: #00c;
+        }
+        #webList label
+        {
+             position:relative;
+             left:-3px;
+            }
+               #webList label input
+               {
+                    position:relative;
+                    top:2px;
+                   }
+        .newList li
+        {
+             padding:10px 9px;
+              position:relative;
+            }
+            .newList li:nth-child(even){background:#efefef;}
+            .c-author
+            {
+                 color:#666;
+                  margin-bottom:5px;
+                }
+                   .c-author .source
+                   {
+                        margin-right:20px;
+                       }
+                       
+                               #activeList
+        {
+            margin-top: 10px;
+            margin-bottom: 30px;
+            padding: 10px 15px;
+            border-radius: 4px;
+        }
+        #activeList li
+        {
+            float: left;
+            margin-right: 15px;
+        }
+        .activeName
+        {
+            display: inline-block;
+            border: 1px solid #D4D1D1;
+            border-radius: 4px;
+            padding: 2px 4px;
+            margin-left: 20px;
+            color: #8A8A8A;
+            background-color: #fff;
+        }
+        .item
+        {
+            background-color: #00A1E5;
+            height: 30px;
+            color: #fff;
+            line-height: 30px;
+             padding-left:10px;
+              
+        }
+        .idx
+        {
+            font-size: 21px;
+            margin: 0 5px;
+        }
+        .leftFont
+        {
+            float: left;
+            width: 450px;
+        }
+        .rightImg
+        {
+            float: right;
+            width: 110px;
+        }
+        .rightImg img
+        {
+            max-width: 100%;
+            max-height: 100px;
+        }
+        .tools
+        {
+            position: absolute;
+            height: 24px;
+            line-height: 24px;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 0 5px;
+        }
+        .tools label
+        {
+            margin-right: 5px;
+            color: #fff;
+        }
+        .tools label input
+        {
+            position: relative;
+            top: 2px;
+        }
+                #tools_link
+        {
+             border-top:1px solid #efefef;
+             margin-top:20px;
+              padding-top:10px;
+            }
+             #tools_link a
+            {
+                  color:rgb(0, 102, 204);
+                   margin-right:20px;
+                }
+                h3.title a span
+                {
+                     margin-right:5px;
+                    }
+                    .word
+                    {
+                         float:left;
+                          background-color:#00A1E5;
+                          color:#fff;
+                          margin-top:10px;
+                           padding:1px 10px;
+                        }
+                        .class
+                        {
+                             float:left;
+                              margin-top:14px;
+                               margin-left:15px;
+                            }
+                            #cks label
+                            {
+                              margin-left:15px;
+                                }

@@ -1,0 +1,27 @@
+﻿{
+  "name": "调研小助手",
+  "version": "8.8",
+  "manifest_version": 2,
+  "description": "现有功能（微博、微博批量解析和搜索转载子新闻）",
+   "permissions":["tabs","cookies","http://*/*","https://*/*"],
+   "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["jquery.js","gb2312.js","words.js","pb.js","weibo.js", "myscript.js","weixin.js","text.js","searchChildNews.js"]
+    }
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "icons": 
+  { 
+    "16": "img/logo.png",             
+    "48": "img/logo.png",            
+    "128": "img/logo.png" 
+  },
+   "browser_action": {
+    "default_icon": "img/logo.png", 
+    "default_title": "调研小助手",
+    "default_popup": "popup.html"
+  }
+  }
