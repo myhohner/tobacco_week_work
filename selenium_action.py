@@ -12,19 +12,13 @@ class Selenium_action:
     def setUp(self):
         option = webdriver.ChromeOptions()
         #option.add_argument(r'C:\Users\myhoh\AppData\Local\Google\Chrome\User Data')
-<<<<<<< HEAD
+
         extension_path = r'C:\Users\user\Desktop\proxyee\日常\tobaccofreekids_month_work\tobacco_week_work\helper.crx' #根据存放位置修改 
         driver_path=r'C:\Users\user\AppData\Local\Google\Chrome\Application\chromedriver.exe'
         option.add_extension(extension_path)#先保证浏览器正确安装扩展
         #option.add_argument(r'--user-data-dir=C:\Users\myhoh\AppData\Local\Google\Chrome\User Data')
         self.driver=webdriver.Chrome(driver_path,options=option)
-=======
-        extension_path = r'C:\Users\myhoh\Desktop\helper_2.crx' #根据存放位置修改 
 
-        option.add_extension(extension_path)
-        #option.add_argument(r'--user-data-dir=C:\Users\myhoh\AppData\Local\Google\Chrome\User Data')
-        self.driver=webdriver.Chrome(options=option)
->>>>>>> ddab1a9b8207b916d8e62b00ed887e0483dab17e
         self.driver.implicitly_wait(30)
 
         base_url = "http://tobaccofreekids.meihua.info/v2/Login2.aspx?ReturnUrl=%2fAdmin%2fnewsdata.aspx"
@@ -38,6 +32,13 @@ class Selenium_action:
         driver.find_element_by_id("ctl00_cphContent_Login1_LoginButton").click()
         #driver.find_element_by_id("ctl00_s_news").click()
         #driver.get('http://tobaccofreekids.meihua.info/Admin/searchNews.aspx')
+
+    def is_element_present(self, how, what):
+        try:
+            self.driver.find_element(by=how, value=what)
+        except NoSuchElementException as e: 
+            return False
+        return True
 
     #写个方法 
     def crawl(self,title):
@@ -61,15 +62,18 @@ class Selenium_action:
             driver.find_element_by_id("btn_search").click()#搜索
             time1=time.time()
             time.sleep(10)
-            string=driver.find_element_by_xpath("(//div[contains(@class,'tt')]/label/span)[1]").text 
-            while string.replace(' ','')=='':
+            #string=driver.find_element_by_xpath("(//div[contains(@class,'tt')]/label/span)[1]").text 
+            while not self.is_element_present(By.XPATH,r"//*[contains(text(),'搜索完成')]"):
                 time2=time.time()
+                '''
                 if time2-time1>120:
                     num='Error'
                     return num 
+                    '''
                 time.sleep(10)
-                string=driver.find_element_by_xpath("(//div[contains(@class,'tt')]/label/span)[1]").text
-
+            string=driver.find_element_by_xpath("(//div[contains(@class,'tt')]/label/span)[1]").text
+            if string.replace(' ','')=='':
+                string='0'
             res=re.findall('\d+',string)
             num=int(res[0])#转载数字
             #self.driver.close()
@@ -83,13 +87,9 @@ class Selenium_action:
 
     def get_num_list(self,title_list):
         num_list=[]
-<<<<<<< HEAD
         pbar=tqdm(title_list)
         for title in pbar:
             pbar.set_description("Processing %s" % title)
-=======
-        for title in tqdm(title_list):
->>>>>>> ddab1a9b8207b916d8e62b00ed887e0483dab17e
             num=self.crawl(title)
             num_list.append(num)
         '''
